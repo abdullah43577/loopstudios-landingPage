@@ -29,6 +29,10 @@ header {
   position: relative;
 }
 
+nav > img {
+  display: none;
+}
+
 section:has(> .name) {
   display: flex;
   justify-content: space-between;
@@ -161,9 +165,10 @@ figcaption {
 
 figcaption:hover {
   background-image: rgba(0, 0, 0, 0.3);
-  filter: opacity(0.5);
+  /* filter: opacity(0.5); */
   cursor: pointer;
   color: black;
+  font-weight: bold;
 }
 
 figcaption > h2 {
@@ -176,17 +181,10 @@ figcaption > h2 {
   text-align: center;
   font-weight: lighter;
   font-family: "Josefin Sans", sans-serif;
-  z-index: 5;
 }
 
 .imagesCont > :first-child {
   background-image: url("./images/desktop/image-deep-earth.jpg");
-  height: 450px;
-  width: 256px;
-}
-
-.imagesCont > :nth-child(2) {
-  background-image: url("./images/desktop/image-night-arcade.jpg");
   height: 450px;
   width: 256px;
 }
@@ -238,6 +236,9 @@ footer {
   width: 100%;
   height: 100px;
   background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 div.attribution {
@@ -245,14 +246,6 @@ div.attribution {
   bottom: 120px;
   left: 20px;
   font-weight: bold;
-}
-
-section.footCont1 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0px;
-  margin: 0px 100px;
 }
 
 section.footCont1 > img {
@@ -265,11 +258,10 @@ section.footCont1 > img {
   cursor: pointer;
 }
 
-section.footCont2 {
+.socialIcons {
+  padding-bottom: 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0px 100px;
+  justify-content: flex-end;
 }
 
 div.copyright > p {
@@ -278,4 +270,188 @@ div.copyright > p {
 
 nav ul > .list :first-child {
   padding-left: 0;
+}
+
+nav {
+  padding-top: 20px;
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+  section:has(img[src="./images/desktop/image-interactive.jpg"]) {
+    flex-direction: column;
+    width: 100%;
+    margin: 50px auto;
+  }
+
+  section:has(img[src="./images/desktop/image-interactive.jpg"]) > article {
+    position: unset;
+    width: 350px;
+    margin: 0 auto;
+  }
+
+  article > h1 {
+    font-size: 25px;
+  }
+
+  .imagesCont {
+    grid-template-areas:
+      "one"
+      "two"
+      "three"
+      "four"
+      "five"
+      "six"
+      "seven"
+      "eight";
+  }
+
+  .imagesCont > :first-child {
+    background-image: url("./images/mobile/image-deep-earth.jpg");
+    width: 350px;
+    height: 150px;
+    background-repeat: no-repeat;
+    grid-area: one;
+  }
+
+  .imagesCont > :nth-child(2) {
+    background-image: url("./images/mobile/image-night-arcade.jpg");
+    width: 350px;
+    height: 150px;
+    background-repeat: no-repeat;
+    grid-area: two;
+  }
+
+  .imagesCont > :nth-child(3) {
+    background-image: url("./images/mobile/image-soccer-team.jpg");
+    width: 350px;
+    height: 150px;
+    background-repeat: no-repeat;
+    grid-area: three;
+  }
+
+  .imagesCont > :nth-child(4) {
+    background-image: url("./images/mobile/image-grid.jpg");
+    width: 350px;
+    height: 150px;
+    background-repeat: no-repeat;
+    grid-area: four;
+  }
+
+  .imagesCont > :nth-child(5) {
+    background-image: url("./images/mobile/image-fisheye.jpg");
+    width: 350px;
+    height: 150px;
+    background-repeat: no-repeat;
+    grid-area: five;
+  }
+
+  .imagesCont > :nth-child(6) {
+    background-image: url("./images/mobile/image-from-above.jpg");
+    width: 350px;
+    height: 150px;
+    background-repeat: no-repeat;
+    grid-area: six;
+  }
+
+  .imagesCont > :nth-child(7) {
+    background-image: url("./images/mobile/image-pocket-borealis.jpg");
+    width: 350px;
+    height: 150px;
+    background-repeat: no-repeat;
+    grid-area: seven;
+  }
+
+  .imagesCont > :nth-child(8) {
+    background-image: url("./images/mobile/image-curiosity.jpg");
+    width: 350px;
+    height: 150px;
+    background-repeat: no-repeat;
+    grid-area: eight;
+  }
+
+  img[src="./images/desktop/image-interactive.jpg"] {
+    width: 350px;
+    margin: 0 auto;
+  }
+
+  section.hd:has(h1) {
+    width: 300px;
+    padding-right: 0px;
+    margin: auto;
+    bottom: 45%;
+    left: 10%;
+  }
+
+  section.hd > h1 {
+    font-size: 25px;
+  }
+
+  #creations {
+    margin: 0px;
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 80px;
+  }
+
+  button {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .firstSect {
+    justify-content: space-around;
+  }
+
+  section.footCont2 {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+  }
+
+  section.footCont1 {
+    padding-top: 20px;
+  }
+
+  footer {
+    display: block;
+    text-align: center;
+    margin-top: 100px;
+    height: 100%;
+  }
+
+  nav > ul {
+    display: block;
+  }
+
+  nav ul > li {
+    padding: 10px 0px;
+  }
+
+  div.attribution {
+    /* bottom: 300px; */
+    display: none;
+  }
+
+  nav ul.navbar {
+    display: none;
+  }
+
+  img[src="./images/icon-hamburger.svg"] {
+    display: block;
+    width: 40px;
+  }
+
+  section:has(> .name) {
+    margin: 0;
+    justify-content: space-around;
+  }
+
+  #navhd {
+    padding: 0;
+  }
 }
