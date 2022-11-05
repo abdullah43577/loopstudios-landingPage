@@ -164,11 +164,20 @@ figcaption {
 }
 
 figcaption:hover {
-  background-image: rgba(0, 0, 0, 0.3);
-  /* filter: opacity(0.5); */
   cursor: pointer;
-  color: black;
   font-weight: bold;
+  color: black;
+}
+
+.overlay {
+  height: 450px;
+  width: 256px;
+  transition: 0.5s ease-out;
+}
+
+.overlay:hover {
+  background: rgba(255, 255, 255, 0.712);
+  cursor: pointer;
 }
 
 figcaption > h2 {
@@ -303,6 +312,11 @@ nav {
       "six"
       "seven"
       "eight";
+  }
+
+  .overlay {
+    width: 350px;
+    height: 150px;
   }
 
   .imagesCont > :first-child {
